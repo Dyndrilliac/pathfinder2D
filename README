@@ -1,0 +1,5 @@
+Title: Pathfinder Demo
+Author: Matthew Boyette
+Date: 10/25/2013
+
+This application demonstrates two dimensional A* pathfinding around polygonal obstacles.
