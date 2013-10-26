@@ -1,3 +1,10 @@
+/*
+	Title: A* Pathfinding Application
+	Author: Matthew Boyette
+	Date: 10/25/2013
+	
+	This application is a demonstration of a two dimensional A* pathfinding routine.
+*/
 import api.gui.*;
 import api.util.*;
 
