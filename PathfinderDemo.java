@@ -66,8 +66,6 @@ public class PathfinderDemo
 				}
 			}
 			
-			// TODO: Print out solution in console.
-			
 			if (!shortestPath.getSolution().isEmpty())
 			{
 				System.out.println("\nSolution:");
