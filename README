@@ -1,8 +1,0 @@
-Title: Pathfinder Demo
-Author: Matthew Boyette
-Date: 10/25/2013
-
-This application demonstrates two dimensional A* pathfinding around polygonal obstacles.
-
-Supply a map file with the command line. 
-Example: java PathfinderDemo map1.txt
