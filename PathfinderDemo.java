@@ -5,6 +5,7 @@
 	
 	This application is a demonstration of a two dimensional A* pathfinding routine.
 */
+
 import api.gui.*;
 import api.util.*;
 
