@@ -1,7 +1,7 @@
 /*
-	Title: A* Pathfinding Application
+	Title:  A* Pathfinding Application
 	Author: Matthew Boyette
-	Date: 10/25/2013
+	Date:   10/25/2013
 	
 	This application is a demonstration of a two dimensional A* pathfinding routine.
 */
