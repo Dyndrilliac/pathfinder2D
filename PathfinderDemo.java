@@ -14,24 +14,25 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 
-import javax.swing.JOptionPane;
-
 public class PathfinderDemo
 {
-	private static boolean debugMode = false;
+	private boolean				debugMode	= false;
+	private ApplicationWindow	window		= null;
 	
 	public static final void main(final String[] args)
 	{
-		ApplicationWindow mainWindow = null;
-		int               choice     = Support.promptDebugMode(mainWindow);
-		
-		debugMode = (choice == JOptionPane.YES_OPTION);
+		new PathfinderDemo(args);
+	}
+	
+	public PathfinderDemo(final String[] args)
+	{
+		this.setDebugging(Support.promptDebugMode(this.getWindow()));
 		
 		if (args.length > 0)
 		{
-			final Games.AStarShortestPath2D shortestPath = new Games.AStarShortestPath2D(debugMode, args[0]);
+			final Games.AStarShortestPath2D shortestPath = new Games.AStarShortestPath2D(this.isDebugging(), args[0]);
 			
-			if (debugMode)
+			if (this.isDebugging())
 			{
 				System.out.println("Start point: " + shortestPath.getStartPoint().toString());
 				System.out.println("Goal point: " + shortestPath.getGoalPoint().toString());
@@ -85,8 +86,10 @@ public class PathfinderDemo
 			}
 			
 			// Define a self-contained interface construction event handler.
-			EventHandler myDrawGUI = new EventHandler()
+			EventHandler myDrawGUI = new EventHandler(this)
 			{
+				private static final long serialVersionUID = 1L;
+
 				public final void run(final Object... arguments) throws IllegalArgumentException
 				{
 					if (arguments.length <= 0)
@@ -108,10 +111,29 @@ public class PathfinderDemo
 				}
 			};
 			
-			mainWindow = new ApplicationWindow(null, "A* Pathfinding Application", new Dimension(425, 250), debugMode, false, 
-				null, myDrawGUI);
-			
-			mainWindow.setIconImageByResourceName("icon.png");
-		}	
+			this.setWindow(new ApplicationWindow(null, "A* Pathfinding Application", new Dimension(425, 250), this.isDebugging(), false, 
+				null, myDrawGUI));
+			this.getWindow().setIconImageByResourceName("icon.png");
+		}
+	}
+	
+	public final ApplicationWindow getWindow()
+	{
+		return this.window;
+	}
+	
+	public final boolean isDebugging()
+	{
+		return this.debugMode;
+	}
+	
+	protected final void setDebugging(final boolean debugMode)
+	{
+		this.debugMode = debugMode;
+	}
+	
+	protected final void setWindow(final ApplicationWindow window)
+	{
+		this.window = window;
 	}
 }
