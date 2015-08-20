@@ -54,7 +54,8 @@ public class PathfinderDemo
 					StdOut.println(shortestPath.getEdges().get(j));
 				}
 				
-				if (shortestPath.getGoalPoint().isWithinLineOfSightOf(shortestPath.getStartPoint(), shortestPath.getEdges()))
+				if (shortestPath.getGoalPoint().isWithinLineOfSightOf(shortestPath.getStartPoint(), 
+					shortestPath.getEdges()))
 				{
 					StdOut.println("\nThe goal point is within line of sight of the start point.");
 				}
@@ -63,14 +64,16 @@ public class PathfinderDemo
 					StdOut.println("\nThe goal point is not within line of sight of the start point.");
 				}
 				
-				StdOut.println("\nVertices adjacent to start point (" + shortestPath.getStartPoint().getNodesWithinLOS().size() + "):");
+				StdOut.println("\nVertices adjacent to start point (" + 
+					shortestPath.getStartPoint().getNodesWithinLOS().size() + "):");
 				
 				for (int j = 0; j < shortestPath.getStartPoint().getNodesWithinLOS().size(); j++)
 				{
 					StdOut.println(shortestPath.getStartPoint().getNodesWithinLOS().get(j));
 				}
 				
-				StdOut.println("\nVertices adjacent to goal point (" + shortestPath.getGoalPoint().getNodesWithinLOS().size() + "):");
+				StdOut.println("\nVertices adjacent to goal point (" + 
+					shortestPath.getGoalPoint().getNodesWithinLOS().size() + "):");
 				
 				for (int j = 0; j < shortestPath.getGoalPoint().getNodesWithinLOS().size(); j++)
 				{
@@ -97,7 +100,8 @@ public class PathfinderDemo
 				public final void run(final ApplicationWindow window)
 				{
 					Container contentPane = window.getContentPane();
-					AStarShortestPath2D.MapDisplay mapDisplay = new AStarShortestPath2D.MapDisplay(Color.WHITE, Color.BLACK, shortestPath, 10.0);
+					AStarShortestPath2D.MapDisplay mapDisplay = new AStarShortestPath2D.MapDisplay(Color.WHITE, 
+						Color.BLACK, shortestPath, 10.0);
 					
 					contentPane.setLayout(new BorderLayout());
 					contentPane.add(mapDisplay, BorderLayout.CENTER);
@@ -105,8 +109,8 @@ public class PathfinderDemo
 				}
 			};
 			
-			this.setWindow(new ApplicationWindow(null, "A* Pathfinding Application", new Dimension(425, 250), this.isDebugging(), false,
-				null, myDrawGUI));
+			this.setWindow(new ApplicationWindow(null, "A* Pathfinding Application", new Dimension(425, 250), this.isDebugging(), 
+				false, null, myDrawGUI));
 			this.getWindow().setIconImageByResourceName("icon.png");
 		}
 	}
