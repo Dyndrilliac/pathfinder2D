@@ -2,7 +2,7 @@
 
 * Title:     Pathfinder Demo
 * Author:    [Matthew Boyette](mailto:Dyndrilliac@gmail.com)
-* Class:     Introduction To Artificial Intelligence (CAP 4630)
+* Class:     Introduction to Artificial Intelligence (CAP 4630)
 * Professor: Dr. Ching-Hua Chuan
 * Term:      Fall 2013
 
